@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<facelet-taglib>
+    <namespace>http://localhost/facelets</namespace>
+    <tag>
+        <tag-name>myComponent</tag-name>
+        <source>myFacet.xhtml</source>
+    </tag>
+</facelet-taglib>
