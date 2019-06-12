@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
 <h:body>
     <ui:composition>
-        <h:outputText value="#{outputValue}"/> <h:inputText value="#{inputValue}"/>
+
+        <div class="form-group">
+            <h:outputLabel for="planeBrand" class="control-label col-sm-4">Plane Brand:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="planeBrand" value="#{planeBean.brand}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="planeCaptain" class="control-label col-sm-4">Plane Captain:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="planeCaptain" value="#{planeBean.captain}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="planeEngine" class="control-label col-sm-4">Plane Engine:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="planeEngine" value="#{planeBean.engine}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="planeSeries" class="control-label col-sm-4">Plane Series:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="planeSeries" value="#{planeBean.series}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+
     </ui:composition>
 </h:body>
 </html>

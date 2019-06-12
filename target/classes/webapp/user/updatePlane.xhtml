@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:d="http://localhost/facelets">
+
+<h:head>
+    <title>Update Plane</title>
+    <f:metadata>
+        <f:viewParam name="id" value="#{planeBean.id}" required="true" />
+        <f:viewParam name="brand" value="#{planeBean.brand}" required="true" />
+        <f:viewParam name="captain" value="#{planeBean.captain}" required="true" />
+        <f:viewParam name="engine" value="#{planeBean.engine}" required="true" />
+        <f:viewParam name="series" value="#{planeBean.series}" required="true" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h2><h:outputText value="Update plane with id#{planeBean.id}"/></h2>
+
+        <!--<h:inputText id="planeId" value="#{planeBean.id}" style="display: none;"></h:inputText>-->
+        <d:myComponent></d:myComponent>
+
+        <h:commandButton action = "#{planeBean.updatePlane(planeBean.id)}" value = "Update" />
+        <h:commandButton action = "planeList.xhtml?faces-redirect=true" value = "Return" />
+    </h:form>
+</h:body>
+
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Plane List</title>
+</h:head>
+<h:body>
+    <center><h2><h:outputText value="User planes"/></h2></center>
+    <h:form id="planeForm">
+        <h:dataTable id="planeTable" binding="#{table}" value="#{userBean.getAllUserPlanes()}" var="plane" class="planeTable">
+            <h:column>
+                <f:facet name="header">Number</f:facet>
+                <h:outputText id="id" value="#{plane.getId()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Brand</f:facet>
+                <h:outputText id="brand" value="#{plane.getBrand()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Captain</f:facet>
+                <h:outputText id="captain" value="#{plane.getCaptain()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Engine</f:facet>
+                <h:outputText id="engine" value="#{plane.getEngine()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Series</f:facet>
+                <h:outputText id="series" value="#{plane.getSeries()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:commandButton action="#{planeBean.toUpdatePage(plane.getId())}" value="Update" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:commandButton action="#{planeBean.deletePlane(plane.getId())}" value="Delete" />
+            </h:column>
+        </h:dataTable>
+        <center>
+            <h:commandButton action = "/user/addPlane.xhtml?faces-redirect=true" value = "Add Plane" />
+            <h:commandButton action = "/admin/planeList.xhtml?faces-redirect=true" value = "See all planes"
+                             disabled="#{not securityBean.isUserAdmin()}"/>
+            <h:commandButton action = "#{securityBean.logout()}" value = "LogOut" />
+        </center>
+    </h:form>
+</h:body>
+
+
+</html>

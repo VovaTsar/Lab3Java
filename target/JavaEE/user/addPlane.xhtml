@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:d="http://localhost/facelets">
+
+<h:head>
+    <title>Add Plane</title>
+
+</h:head>
+<h:body>
+    <h:form>
+        <h2><h:outputText value="ADD YOUR PLANE"/></h2>
+
+        <div class="form-group">
+            <h:outputLabel for="planeId" class="control-label col-sm-4">Plane ID:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="planeId" value="#{planeBean.id}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <d:myComponent></d:myComponent>
+
+        <h:commandButton action = "#{planeBean.savePlane()}" value = "Save" />
+        <h:commandButton action = "planeList.xhtml?faces-redirect=true" value = "Return" />
+    </h:form>
+</h:body>
+</html>
